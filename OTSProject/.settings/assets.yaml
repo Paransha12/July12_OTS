@@ -50,6 +50,33 @@ resources:
   - name: JPPestStore_July12_1689162462073_perf!localhost.rstats
     type: com.ibm.rational.test.lt.stats.raw
   - name: JPPestStore_July12_1689162463745.executiondlr
+  - name: LP1-AP-52016888.PROD.HCLPNP.COM.location
+    type: com.ibm.rational.test.lt.location
+  - name: 'Paransha''s Linux Agent.location'
+    type: com.ibm.rational.test.lt.location
+  - name: VUSchedule.testsuite
+    type: com.ibm.rational.test.lt.schedule
+    version: 10.5.2.0
+    properties: 
+      description: 'Stages:
+
+	users=5; duration=Run Until Finished
+
+User Group 1: Group Size 100.0 percent
+
+	Agent(s): LP1-AP-52016888.PROD.HCLPNP.COM
+
+	Test(s): JPPestStore_July12
+
+'
+      name: VUSchedule
+      type: com.ibm.rational.test.common.schedule.Schedule
+      uid: A1EE20B0D86F74A0E8CAB03539613934
+    dependencies: 
+      - path: /OTSProject/JPPestStore_July12.testsuite
+        type: scheduleInvokedTest
+      - path: /OTSProject/LP1-AP-52016888.PROD.HCLPNP.COM.location
+        type: scheduleLocation
   - name: src
     resources: 
       - name: test
