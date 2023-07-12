@@ -1,0 +1,58 @@
+name: OTSProject
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /OTSProject/src
+        type: javaClasspath
+  - name: JPPestStore_July12.recdata
+  - name: JPPestStore_July12.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /OTSProject/JPPestStore_July12.recdata
+        type: recsessionRecdata
+  - name: JPPestStore_July12.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.2.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE20A9E16B94F0E8CAB03539613934
+    dependencies: 
+      - path: /OTSProject/JPPestStore_July12.recsession
+        type: testRecsession
+  - name: JPPestStore_July12_1689162462073.stats
+    type: com.ibm.rational.test.lt.stats.session
+    properties: 
+      startTime: 1689162462073
+      tags: 
+      testId: A1EE20A9E16B94F0E8CAB03539613934
+      testName: JPPestStore_July12
+    dependencies: 
+      - path: /OTSProject/JPPestStore_July12.testsuite
+        type: statsSessionTest
+      - path: /OTSProject/JPPestStore_July12_1689162462073_orch!system.mstats
+        type: statsSessionStore
+      - path: /OTSProject/JPPestStore_July12_1689162462073_orch!system.rstats
+        type: statsSessionStore
+      - path: /OTSProject/JPPestStore_July12_1689162462073_perf!localhost.mstats
+        type: statsSessionStore
+      - path: /OTSProject/JPPestStore_July12_1689162462073_perf!localhost.rstats
+        type: statsSessionStore
+      - path: /OTSProject/JPPestStore_July12_1689162463745.executiondlr
+        type: statsSessionAsset
+  - name: JPPestStore_July12_1689162462073_orch!system.mstats
+  - name: JPPestStore_July12_1689162462073_orch!system.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: JPPestStore_July12_1689162462073_perf!localhost.mstats
+  - name: JPPestStore_July12_1689162462073_perf!localhost.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: JPPestStore_July12_1689162463745.executiondlr
+  - name: src
+    resources: 
+      - name: test
+        resources: 
+          - name: JPPestStore_July12_Test_A1EE20A9E16B94F0E8CAB03539613934.java
+            type: com.ibm.rational.test.lt.generatedCode
